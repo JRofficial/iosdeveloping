@@ -1,0 +1,101 @@
+<CustomPopup>:
+	size_hint: .4 , .2
+	auto_dismiss: True
+	title: "Theme"
+
+	Spinner:
+		text:"Theme"
+		font_size:90
+		values: ["Colored","Light"]
+		id: spinner_id
+		on_text: app.spinner_clicked(spinner_id.text)
+	
+<Button>:
+	color: (0,0,0,1)
+	
+
+				
+BoxLayout:
+	orientation: "vertical"
+	canvas:
+		Color:
+			rgb: [0.7, 0.7, 0.7]
+		Rectangle:
+			pos: self.pos
+			size: self.size
+			
+	
+	
+
+	GridLayout:
+		cols:3
+		orientation: "vertical"
+		
+		Button:
+			text:"Theme"
+			font_size:110
+			background_color: (0,0,0,0.5)
+			color: (1,1,1,0.5)
+			on_press: app.open_popup()
+			id: theme_button
+			
+
+		Label:
+			text:"WERBUNG"
+		Label:
+			text:""
+		Label:
+			text:""			
+		Label:
+			text:""
+		Label:
+			text:""			
+	Label:
+		id: outputLabel
+		text: "0"
+		color : (1,1,1,1)
+		font_size: 120
+	
+			
+	Label:
+		id: Storednum
+		text: "0"
+		background_color: (1,1,0,1)
+		color: (0,1,1,10)
+		font_size: 100
+
+		
+	GridLayout:
+		cols:2
+		Button: 
+			text: "+"
+			on_press: app.count(self)
+			background_color: (0,255,0,0.4)
+			font_size:120
+			id: count_button
+		
+		Button: 
+			text: "-"
+			on_press: app.delete(self)
+			background_color: (255,0,0,0.4)
+			font_size:120
+			id: delete_button
+			
+		Button:
+			text: "Reset"
+			on_press: app.reset(self)
+			font_size: 100
+			background_color: (0,0,1,0.4)
+			color: (1,1,1,0.5)
+			id: reset_button
+		Button: 
+			text: "Store Count"
+			on_press: app.store(self)
+			background_color: (1,0,1,0.4)
+			font_size: 100
+			color: (1,1,1,0.5)
+			id: store_button
+
+				
+				
+				
